@@ -2,6 +2,7 @@ package com.example.nbcamp_kakao
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.bumptech.glide.Glide
 import com.example.nbcamp_kakao.bookmark.BookmarkFragment
 
 import com.example.nbcamp_kakao.databinding.MainActivityBinding
