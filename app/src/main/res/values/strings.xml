@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">nbcamp_kakao</string>
+    <string name="search_tab">검색</string>
+    <string name="bookmark_tab">즐겨찾기</string>
+</resources>
