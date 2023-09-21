@@ -21,7 +21,10 @@ import com.example.nbcamp_kakao.model.ImageSearchResponse
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.text.SimpleDateFormat
+import java.time.LocalDate
 import java.time.format.DateTimeFormatter
+import java.util.Locale
 
 class SearchFragment:Fragment() {
     private var _binding: SearchFragmentBinding? = null
@@ -110,8 +113,13 @@ class SearchFragment:Fragment() {
                             val title = document.sitename
                             val url = document.image_url
                             val convertdate = document.datetime
-                            val date = convertdate.format(DateTimeFormatter.ofPattern("yyyy.mm.dd HH:mm:ss"))
-
+                            //simple
+//                            val formatter = convertdate.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"))
+                            var format = SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.KOREAN)
+                            var test = format.parse(convertdate)
+                            var formatter = SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.KOREAN)
+                            val date = formatter.format(test)
+                            Log.d("test6","$date")
                             list.add(SearchItemModel(title, date, url))
                             Log.d("test2","$title,$date, $url")
                     }

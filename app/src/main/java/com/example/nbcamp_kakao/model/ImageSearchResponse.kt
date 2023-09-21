@@ -2,6 +2,8 @@ package com.example.nbcamp_kakao.model
 
 
 import com.google.gson.annotations.SerializedName
+import java.time.format.DateTimeFormatter
+import java.util.Date
 
 data class ImageSearchResponse(
     @SerializedName("meta")
