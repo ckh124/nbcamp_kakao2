@@ -112,16 +112,14 @@ class SearchFragment:Fragment() {
                         response.body()!!.documents?.forEach { document ->
                             val title = document.sitename
                             val url = document.image_url
-                            val convertdate = document.datetime
+//                            val convertdate = document.datetime
                             //simple
-//                            val formatter = convertdate.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"))
-                            var format = SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.KOREAN)
-                            var test = format.parse(convertdate)
-                            var formatter = SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.KOREAN)
-                            val date = formatter.format(test)
-                            Log.d("test6","$date")
-                            list.add(SearchItemModel(title, date, url))
-                            Log.d("test2","$title,$date, $url")
+                            val format = SimpleDateFormat("YYYY-MM-DD'T'hh:mm:ss.SSSZ", Locale.KOREAN)
+                            val date = format.parse(document.datetime)
+                            val formatter = SimpleDateFormat("yyyy-MM-dd hh:mm:ss", Locale.KOREAN)
+                            val dateString = formatter.format(date)
+                            list.add(SearchItemModel(title, dateString, url))
+                            Log.d("test2","$title,$dateString, $url")
                     }
 
                     }
